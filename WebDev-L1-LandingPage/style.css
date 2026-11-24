@@ -1,0 +1,980 @@
+
+/* ========================================
+   TERRA & LIVING
+   Oasis Infobyte - Level 1 Task 01
+   Theme: Brown | Dark Orange | Terracotta
+======================================== */
+
+
+/* 01. CSS Variables */
+
+:root {
+    --color-background: #F5EFE6;
+    --color-white: #FFFCF8;
+    --color-dark: #29221E;
+    --color-text: #62554D;
+    --color-muted: #948477;
+
+    --color-olive: #A94F25;
+    --color-olive-dark: #78371D;
+
+    --color-beige: #E5D5C3;
+    --color-border: #E3D6C9;
+
+    --color-heading-accent: #D27A42;
+    --color-light-accent: #E6A276;
+
+    --font-heading: "Playfair Display", serif;
+    --font-body: "DM Sans", sans-serif;
+
+    --container-width: 1200px;
+}
+
+
+/* 02. Reset and Global Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container {
+    width: min(90%, var(--container-width));
+    margin-inline: auto;
+}
+
+.section-padding {
+    padding-block: 110px;
+}
+
+.eyebrow {
+    color: var(--color-olive);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+}
+
+.section-title {
+    margin-top: 16px;
+    font-family: var(--font-heading);
+    font-size: clamp(35px, 4vw, 54px);
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+}
+
+.section-title em {
+    color: var(--color-heading-accent);
+    font-weight: 500;
+}
+
+
+/* 03. Navigation Bar */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.navbar {
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.logo {
+    color: var(--color-dark);
+    font-family: var(--font-heading);
+    font-size: 27px;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+}
+
+.logo span {
+    color: var(--color-olive);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--color-olive);
+}
+
+.nav-button {
+    padding: 12px 19px;
+    background-color: var(--color-dark);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: var(--color-olive);
+}
+
+.nav-button span {
+    margin-left: 10px;
+}
+
+
+/* 04. Hero Section */
+
+.hero-section {
+    position: relative;
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-image: url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2000&q=90");
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(41, 30, 24, 0.88) 0%,
+        rgba(41, 30, 24, 0.62) 48%,
+        rgba(41, 30, 24, 0.12) 100%
+    );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    padding-block: 110px;
+    color: var(--color-white);
+}
+
+.hero-eyebrow {
+    color: #E6B99A;
+}
+
+.hero-content h1 {
+    margin-top: 22px;
+    font-family: var(--font-heading);
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -2px;
+}
+
+.hero-content h1 em {
+    color: var(--color-light-accent);
+    font-weight: 500;
+}
+
+.hero-description {
+    max-width: 480px;
+    margin-top: 25px;
+    color: rgba(255, 252, 248, 0.88);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.primary-button {
+    min-height: 52px;
+    margin-top: 32px;
+    padding: 15px 23px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    background-color: var(--color-olive);
+    color: var(--color-white);
+    font-size: 12px;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: var(--color-olive-dark);
+    transform: translateY(-3px);
+}
+
+.primary-button span {
+    font-size: 16px;
+}
+
+.hero-bottom {
+    margin-top: 95px;
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    color: rgba(255, 252, 248, 0.8);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.hero-line {
+    width: 65px;
+    height: 1px;
+    background-color: rgba(255, 252, 248, 0.7);
+}
+
+.hero-side-text {
+    position: absolute;
+    right: 35px;
+    bottom: 65px;
+    color: rgba(255, 252, 248, 0.8);
+    font-size: 10px;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+}
+
+
+/* 05. Introduction Section */
+
+.intro-section {
+    background-color: var(--color-background);
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    align-items: end;
+    gap: 80px;
+}
+
+.intro-text {
+    max-width: 420px;
+    padding-bottom: 7px;
+}
+
+.intro-text p {
+    color: var(--color-text);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.text-link {
+    width: fit-content;
+    margin-top: 25px;
+    padding-bottom: 7px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid var(--color-olive);
+    color: var(--color-dark);
+    font-size: 12px;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.text-link:hover {
+    color: var(--color-olive);
+}
+
+.text-link span {
+    color: var(--color-olive);
+    font-size: 16px;
+}
+
+
+/* 06. Featured Apartments */
+
+.apartments-section {
+    background-color: var(--color-beige);
+}
+
+.section-heading {
+    margin-bottom: 48px;
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.section-heading .text-link {
+    margin-bottom: 8px;
+}
+
+.apartment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.apartment-card {
+    min-width: 0;
+    background-color: var(--color-white);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.apartment-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(41, 34, 30, 0.12);
+}
+
+.apartment-image {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+}
+
+.apartment-image img {
+    transition: transform 0.5s ease;
+}
+
+.apartment-card:hover .apartment-image img {
+    transform: scale(1.05);
+}
+
+.property-tag {
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    padding: 7px 11px;
+    background-color: var(--color-background);
+    color: var(--color-dark);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+}
+
+.apartment-details {
+    padding: 24px 22px;
+}
+
+.property-location {
+    color: var(--color-olive);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.6px;
+}
+
+.apartment-details h3 {
+    margin-top: 10px;
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.property-description {
+    margin-top: 5px;
+    color: var(--color-muted);
+    font-size: 12px;
+}
+
+.property-info {
+    margin-top: 22px;
+    padding-block: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px 15px;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+    color: var(--color-text);
+    font-size: 10px;
+}
+
+.property-footer {
+    margin-top: 19px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.property-footer p {
+    color: var(--color-muted);
+    font-size: 11px;
+}
+
+.property-footer strong {
+    color: var(--color-dark);
+    font-size: 14px;
+}
+
+.property-footer a {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-olive);
+    color: var(--color-white);
+    transition: background-color 0.3s ease;
+}
+
+.property-footer a:hover {
+    background-color: var(--color-dark);
+}
+
+.demo-note {
+    margin-top: 22px;
+    color: var(--color-muted);
+    font-size: 11px;
+}
+
+
+/* 07. Why Choose Us */
+
+.why-section {
+    background-color: var(--color-background);
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.9fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.why-image {
+    position: relative;
+    height: 590px;
+}
+
+.image-caption {
+    position: absolute;
+    right: -1px;
+    bottom: 0;
+    padding: 17px 22px;
+    background-color: var(--color-olive);
+    color: var(--color-white);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+}
+
+.why-content {
+    padding-block: 20px;
+}
+
+.why-description {
+    max-width: 440px;
+    margin-top: 22px;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.feature-list {
+    margin-top: 30px;
+}
+
+.feature-item {
+    padding-block: 20px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 15px;
+    border-top: 1px solid var(--color-border);
+}
+
+.feature-number {
+    color: var(--color-olive);
+    font-family: var(--font-heading);
+    font-size: 18px;
+}
+
+.feature-item h3 {
+    font-family: var(--font-heading);
+    font-size: 19px;
+    font-weight: 600;
+}
+
+.feature-item p {
+    margin-top: 5px;
+    color: var(--color-muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* 08. Amenities Section */
+
+.amenities-section {
+    background-color: #E9D8C5;
+}
+
+.amenities-heading {
+    max-width: 650px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.amenities-heading > p:last-child {
+    max-width: 450px;
+    margin: 18px auto 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+.amenities-grid {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.amenity-card {
+    min-height: 225px;
+    padding: 30px 22px;
+    background-color: rgba(255, 252, 248, 0.75);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.amenity-card:hover {
+    background-color: var(--color-white);
+    transform: translateY(-5px);
+}
+
+.amenity-icon {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background-color: var(--color-olive);
+    color: var(--color-white);
+    font-size: 22px;
+}
+
+.amenity-card h3 {
+    margin-top: 22px;
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.amenity-card p {
+    margin-top: 8px;
+    color: var(--color-muted);
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+
+/* 09. About Section */
+
+.about-section {
+    background-color: var(--color-background);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1fr;
+    align-items: center;
+    gap: 90px;
+}
+
+.about-content > p:not(.eyebrow) {
+    max-width: 470px;
+    margin-top: 20px;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 2;
+}
+
+.about-image {
+    height: 510px;
+}
+
+.dark-button {
+    background-color: var(--color-dark);
+}
+
+.dark-button:hover {
+    background-color: var(--color-olive);
+}
+
+
+/* 10. Contact Section */
+
+.contact-section {
+    position: relative;
+    overflow: hidden;
+    background-color: #E9D8C5;
+    text-align: center;
+}
+
+.contact-content {
+    max-width: 700px;
+    margin-inline: auto;
+}
+
+.contact-content h2 {
+    margin-top: 20px;
+    font-family: var(--font-heading);
+    font-size: clamp(48px, 7vw, 76px);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -2px;
+}
+
+.contact-content h2 em {
+    color: var(--color-olive);
+}
+
+.contact-content > p:not(.eyebrow) {
+    max-width: 460px;
+    margin: 22px auto 0;
+    color: var(--color-text);
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+
+/* 11. Footer */
+
+.site-footer {
+    padding-top: 65px;
+    background-color: #29221E;
+    color: var(--color-white);
+}
+
+.footer-main {
+    padding-bottom: 55px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 45px;
+}
+
+.footer-logo {
+    color: var(--color-white);
+}
+
+.footer-logo span {
+    color: var(--color-heading-accent);
+}
+
+.footer-brand p {
+    margin-top: 10px;
+    color: #C5B4A7;
+    font-size: 12px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.footer-column h3 {
+    margin-bottom: 8px;
+    color: #E6A276;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.footer-column a {
+    color: #C5B4A7;
+    font-size: 11px;
+    transition: color 0.3s ease;
+}
+
+.footer-column a:hover {
+    color: var(--color-white);
+}
+
+.footer-bottom {
+    min-height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: #C5B4A7;
+    font-size: 10px;
+}
+
+.footer-bottom a {
+    transition: color 0.3s ease;
+}
+
+.footer-bottom a:hover {
+    color: var(--color-white);
+}
+
+
+/* 12. Tablet Responsive Design */
+
+@media (max-width: 900px) {
+
+    .section-padding {
+        padding-block: 85px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .intro-grid,
+    .why-grid,
+    .about-grid {
+        gap: 45px;
+    }
+
+    .apartment-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .apartment-card:last-child {
+        grid-column: 1 / -1;
+    }
+
+    .apartment-card:last-child .apartment-image {
+        height: 320px;
+    }
+
+    .why-image {
+        height: 500px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* 13. Mobile Responsive Design */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: min(90%, 480px);
+    }
+
+    .section-padding {
+        padding-block: 65px;
+    }
+
+    .navbar {
+        min-height: 72px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .nav-button {
+        padding: 10px 13px;
+        font-size: 10px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        padding-bottom: 13px;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    .hero-section {
+        min-height: 590px;
+        background-position: 60% center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            90deg,
+            rgba(41, 30, 24, 0.88),
+            rgba(41, 30, 24, 0.48)
+        );
+    }
+
+    .hero-content {
+        padding-block: 85px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(43px, 12vw, 60px);
+        letter-spacing: -1px;
+    }
+
+    .hero-description {
+        max-width: 360px;
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        margin-top: 75px;
+        font-size: 8px;
+    }
+
+    .hero-side-text {
+        right: 12px;
+        bottom: 30px;
+        font-size: 8px;
+    }
+
+    .intro-grid,
+    .why-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .section-title {
+        font-size: 39px;
+    }
+
+    .intro-text {
+        max-width: 100%;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-heading .text-link {
+        margin-top: 12px;
+    }
+
+    .apartment-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .apartment-card:last-child {
+        grid-column: auto;
+    }
+
+    .apartment-card:last-child .apartment-image,
+    .apartment-image {
+        height: 250px;
+    }
+
+    .apartment-details {
+        padding: 21px 18px;
+    }
+
+    .why-image {
+        height: 390px;
+    }
+
+    .image-caption {
+        right: 0;
+        padding: 13px 15px;
+        font-size: 8px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .amenity-card {
+        min-height: 210px;
+        padding: 22px 15px;
+    }
+
+    .amenity-card h3 {
+        font-size: 16px;
+    }
+
+    .about-image {
+        height: 350px;
+    }
+
+    .contact-content h2 {
+        font-size: 52px;
+    }
+
+    .footer-main {
+        grid-template-columns: 1fr 1fr;
+        gap: 35px 20px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-bottom {
+        padding-block: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+
+/* 14. Small Mobile Screens */
+
+@media (max-width: 360px) {
+
+    .nav-links {
+        gap: 7px;
+    }
+
+    .nav-links a {
+        font-size: 9px;
+    }
+
+    .nav-button {
+        padding: 9px 10px;
+    }
+
+    .amenities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .amenity-card {
+        min-height: auto;
+    }
+
+    .property-info {
+        gap: 8px;
+    }
+}
