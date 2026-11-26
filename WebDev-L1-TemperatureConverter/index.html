@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="THERMORA - A beautiful and interactive Celsius, Fahrenheit and Kelvin temperature converter.">
+
+    <title>THERMORA | Temperature Converter</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Background Effects -->
+    <div class="ambient ambient-hot"></div>
+    <div class="ambient ambient-cold"></div>
+
+    <!-- Header -->
+    <header class="header" id="home">
+
+      
+    <a href="#home" class="brand">
+        <img src="images/logo..png" alt="THERMORA Logo">
+        <span>THERM<span class="brand-gradient">ORA</span></span>
+    </a>
+
+        
+
+        <nav class="navigation">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#features" class="nav-link">Features</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="theme-toggle" id="themeToggle" type="button"
+                aria-label="Toggle color theme">
+            <span class="sun-icon">☀</span>
+            <span class="moon-icon">☾</span>
+        </button>
+
+        <button class="mobile-menu" id="mobileMenu" type="button"
+                aria-label="Toggle navigation">
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- Main Hero -->
+    <main>
+
+        <section class="hero" id="about">
+
+            <!-- Hot Side Illustration -->
+            <div class="temperature-art hot-art" aria-hidden="true">
+
+                <div class="fire-orb"></div>
+
+                <div class="fire-glow"></div>
+
+                <div class="fire-symbol">🔥</div>
+
+                <div class="big-thermometer">
+                    <div class="thermometer-glass">
+                        <div class="thermometer-liquid"></div>
+                    </div>
+                    <div class="thermometer-bulb"></div>
+                </div>
+
+                <div class="hot-label">
+                    <span>HOT</span>
+                    <small>Feel the heat</small>
+                </div>
+
+                <span class="floating-particle particle-one">✦</span>
+                <span class="floating-particle particle-two">✧</span>
+                <span class="floating-particle particle-three">✦</span>
+
+            </div>
+
+
+            <!-- Cold Side Illustration -->
+            <div class="temperature-art cold-art" aria-hidden="true">
+
+                <div class="ice-orb"></div>
+
+                <div class="snowflake snow-one">❄</div>
+                <div class="snowflake snow-two">❄</div>
+                <div class="snowflake snow-three">✳</div>
+
+                <div class="ice-cube">
+                    <div class="ice-cube-inner"></div>
+                </div>
+
+                <div class="cold-label">
+                    <span>COLD</span>
+                    <small>Stay cool</small>
+                </div>
+
+            </div>
+
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+
+                <div class="hero-eyebrow">
+                    <span class="eyebrow-line"></span>
+                    CONVERT <span>•</span> EXPLORE <span>•</span> DISCOVER
+                    <span class="eyebrow-line"></span>
+                </div>
+
+                <h1>
+                    Temperature
+                    <span class="gradient-title">Converter</span>
+                </h1>
+
+                <p class="hero-description">
+                    Switch between
+                    <span class="cyan-text">Celsius</span>,
+                    <span class="orange-text">Fahrenheit</span> and
+                    <span class="blue-text">Kelvin</span>
+                    with ease!
+                </p>
+
+            </div>
+
+
+            <!-- Converter Panel -->
+            <section class="converter-panel" aria-label="Temperature converter">
+
+                <form id="converterForm" novalidate>
+
+                    <div class="converter-controls">
+
+                        <!-- Temperature Input -->
+                        <div class="field-group">
+
+                            <label for="temperatureInput">
+                                <span class="label-icon">♨</span>
+                                Enter Temperature
+                            </label>
+
+                            <div class="input-box">
+                                <input
+                                    type="text"
+                                    id="temperatureInput"
+                                    placeholder="Enter value"
+                                    inputmode="decimal"
+                                    autocomplete="off"
+                                    aria-describedby="inputError"
+                                >
+
+                                <span class="input-unit-symbol" id="inputSymbol">°C</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Unit Selector -->
+                        <div class="field-group">
+
+                            <label for="unitSelect">
+                                <span class="label-icon unit-icon">⬡</span>
+                                Select Unit
+                            </label>
+
+                            <div class="select-box">
+                                <select id="unitSelect">
+                                    <option value="celsius">Celsius (°C)</option>
+                                    <option value="fahrenheit">Fahrenheit (°F)</option>
+                                    <option value="kelvin">Kelvin (K)</option>
+                                </select>
+                                <span class="select-arrow">⌄</span>
+                            </div>
+
+                        </div>
+
+
+                        <!-- Convert Button -->
+                        <div class="button-field">
+
+                            <button type="submit" class="convert-button">
+                                <span class="convert-icon">⟳</span>
+                                <span>Convert</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Validation Message -->
+                    <div class="error-message" id="inputError" role="alert"></div>
+
+
+                    <!-- Results -->
+                    <div class="results-area">
+
+                        <div class="results-heading">
+                            <h2>
+                                <span class="results-icon">▥</span>
+                                Results
+                            </h2>
+
+                            <button type="button" id="clearButton" class="clear-button">
+                                ↺ Clear
+                            </button>
+                        </div>
+
+
+                        <div class="result-grid">
+
+                            <!-- Celsius -->
+                            <article class="result-card celsius-card" id="celsiusCard">
+
+                                <div class="result-icon thermometer-icon">
+                                    <span>♨</span>
+                                </div>
+
+                                <div class="result-information">
+                                    <p class="result-value" id="celsiusResult">-- °C</p>
+                                    <p class="result-name">Celsius</p>
+                                </div>
+
+                            </article>
+
+
+                            <!-- Fahrenheit -->
+                            <article class="result-card fahrenheit-card" id="fahrenheitCard">
+
+                                <div class="result-icon thermometer-icon">
+                                    <span>♨</span>
+                                </div>
+
+                                <div class="result-information">
+                                    <p class="result-value" id="fahrenheitResult">-- °F</p>
+                                    <p class="result-name">Fahrenheit</p>
+                                </div>
+
+                            </article>
+
+
+                            <!-- Kelvin -->
+                            <article class="result-card kelvin-card" id="kelvinCard">
+
+                                <div class="result-icon thermometer-icon">
+                                    <span>♨</span>
+                                </div>
+
+                                <div class="result-information">
+                                    <p class="result-value" id="kelvinResult">-- K</p>
+                                    <p class="result-name">Kelvin</p>
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                        <p class="result-status" id="resultStatus" aria-live="polite">
+                            Enter a temperature and click Convert to see your results.
+                        </p>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+        </section>
+
+
+        <!-- Features -->
+        <section class="features-section" id="features">
+
+            <div class="feature-item">
+                <span class="feature-icon lightning">ϟ</span>
+                <div>
+                    <h3>Instant Results</h3>
+                    <p>Fast and accurate conversion</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <span class="feature-icon shield">✓</span>
+                <div>
+                    <h3>Smart Validation</h3>
+                    <p>Reliable input checking</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <span class="feature-icon device">▣</span>
+                <div>
+                    <h3>Responsive Design</h3>
+                    <p>Works on every screen</p>
+                </div>
+            </div>
+
+            <div class="feature-item">
+                <span class="feature-icon star">★</span>
+                <div>
+                    <h3>Easy to Use</h3>
+                    <p>Simple and friendly interface</p>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- About / Formula Section -->
+        <section class="info-section">
+
+            <div class="info-heading">
+                <span class="section-tag">THE SCIENCE BEHIND IT</span>
+                <h2>Understanding Temperature</h2>
+                <p>Three scales. One simple conversion experience.</p>
+            </div>
+
+            <div class="scale-grid">
+
+                <article class="scale-card scale-celsius">
+                    <span class="scale-symbol">°C</span>
+                    <h3>Celsius</h3>
+                    <p>Commonly used in everyday life and scientific measurements.</p>
+                    <span class="scale-detail">Water freezes at 0°C</span>
+                </article>
+
+                <article class="scale-card scale-fahrenheit">
+                    <span class="scale-symbol">°F</span>
+                    <h3>Fahrenheit</h3>
+                    <p>Commonly used for everyday temperature readings in the USA.</p>
+                    <span class="scale-detail">Water freezes at 32°F</span>
+                </article>
+
+                <article class="scale-card scale-kelvin">
+                    <span class="scale-symbol">K</span>
+                    <h3>Kelvin</h3>
+                    <p>An absolute temperature scale used in scientific applications.</p>
+                    <span class="scale-detail">Absolute zero is 0 K</span>
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="footer" id="contact">
+
+        
+    <a href="#home" class="footer-brand">
+       <img src="images/logo..png" alt="THERMORA Logo">
+       <span>THERMORA</span>
+    </a>
+
+
+        <p>© 2026 THERMORA. All rights reserved.</p>
+
+        <p class="footer-message">
+            Stay Cool. Stay Curious. <span>❄</span>
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

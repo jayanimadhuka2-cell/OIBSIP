@@ -1,0 +1,97 @@
+
+# 🌡️ THERMORA – Temperature Converter
+
+A creative, modern and interactive temperature conversion website developed using HTML5, CSS3 and Vanilla JavaScript.
+
+## ✨ Project Overview
+
+THERMORA is a responsive temperature converter that allows users to convert values between Celsius, Fahrenheit and Kelvin.
+
+The website features a unique Fire & Ice inspired design with glowing visual effects, glassmorphism UI components and interactive temperature conversion.
+
+## 🚀 Features
+
+- Convert Celsius, Fahrenheit and Kelvin.
+- Display all three converted results simultaneously.
+- Real-time numeric input validation.
+- Absolute zero validation for all three temperature scales.
+- User-friendly error messages.
+- Interactive Convert and Clear buttons.
+- Dynamic temperature unit symbols.
+- Light and dark theme toggle.
+- Responsive mobile navigation.
+- Animated Fire & Ice visual elements.
+- Responsive desktop, tablet and mobile layout.
+
+## 🛠️ Technologies Used
+
+- HTML5
+- CSS3
+- Vanilla JavaScript
+
+## 🧮 Conversion Formulas
+
+**Celsius to Fahrenheit**
+
+°F = (°C × 9/5) + 32
+
+**Fahrenheit to Celsius**
+
+°C = (°F − 32) × 5/9
+
+**Celsius to Kelvin**
+
+K = °C + 273.15
+
+**Kelvin to Celsius**
+
+°C = K − 273.15
+
+## 🌡️ Absolute Zero Validation
+
+The application validates the minimum temperature limits:
+
+| Temperature Scale | Absolute Zero |
+|---|---:|
+| Celsius | -273.15 °C |
+| Fahrenheit | -459.67 °F |
+| Kelvin | 0 K |
+
+## 📂 Project Structure
+
+```text
+WebDev-L1-TemperatureConverter/
+│
+├── index.html
+├── style.css
+├── script.js
+└── README.md
+```
+
+## ▶️ How to Run
+
+1. Clone or download the repository.
+2. Open the project folder in Visual Studio Code.
+3. Open `index.html` in a browser or use Live Server.
+4. Enter a temperature value.
+5. Select Celsius, Fahrenheit or Kelvin.
+6. Click the Convert button.
+7. View all three conversion results.
+
+## 🎓 Internship Details
+
+**Organization:** Oasis Infobyte
+
+**Internship:** Web Development & Designing
+
+**Level:** Level 1
+
+**Task:** Task 03 – Temperature Converter Website
+
+## 👩‍💻 Author
+
+R.W.M.J. Madhuka Rathnayaka
+
+## 📄 License
+
+Developed for educational and internship purposes.
